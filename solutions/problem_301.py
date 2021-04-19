@@ -11,8 +11,9 @@ class BloomFilter:
             unhexlify(md5(value.encode("UTF-8")).hexdigest()),
             byteorder='little')
 
-    def add(self, value):
+    def add(self, value):        
         hashed = self.get_hash(value)
+        print(hashed, value)
         self.vector |= hashed
 
     def check(self, value):
